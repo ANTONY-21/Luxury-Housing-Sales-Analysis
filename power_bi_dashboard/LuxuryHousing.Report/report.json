@@ -1,0 +1,65 @@
+{
+  "config": "{\"version\": \"5.43\", \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true}",
+  "layoutOptimization": 0,
+  "resourcePackages": [],
+  "sections": [
+    {
+      "name": "MarketIntelligence",
+      "displayName": "Market Intelligence",
+      "displayOption": 1,
+      "height": 720.0,
+      "width": 1280.0,
+      "ordinal": 0,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": []
+    },
+    {
+      "name": "SalesConversion",
+      "displayName": "Sales & Conversion",
+      "displayOption": 1,
+      "height": 720.0,
+      "width": 1280.0,
+      "ordinal": 1,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": []
+    },
+    {
+      "name": "BuyerPersonas",
+      "displayName": "Buyer Personas",
+      "displayOption": 1,
+      "height": 720.0,
+      "width": 1280.0,
+      "ordinal": 2,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": []
+    },
+    {
+      "name": "Pricing",
+      "displayName": "Pricing",
+      "displayOption": 1,
+      "height": 720.0,
+      "width": 1280.0,
+      "ordinal": 3,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": []
+    },
+    {
+      "name": "DataQuality",
+      "displayName": "Data & Quality",
+      "displayOption": 1,
+      "height": 720.0,
+      "width": 1280.0,
+      "ordinal": 4,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": []
+    }
+  ],
+  "filters": "[]",
+  "pods": [],
+  "publicCustomVisuals": []
+}

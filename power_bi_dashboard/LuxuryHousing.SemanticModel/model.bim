@@ -1,0 +1,865 @@
+{
+  "name": "LuxuryHousing",
+  "compatibilityLevel": 1550,
+  "model": {
+    "culture": "en-US",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "discourageImplicitMeasures": true,
+    "sourceQueryCulture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "expressions": [
+      {
+        "name": "CleanedDataPath",
+        "kind": "m",
+        "expression": "\"E:\\Guvi project\\Luxury-Housing-Sales-Analysis\\data\\processed\\luxury_housing_clean.csv\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      }
+    ],
+    "tables": [
+      {
+        "name": "luxury_housing",
+        "columns": [
+          {
+            "name": "Property_ID",
+            "dataType": "string",
+            "sourceColumn": "Property_ID",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Project_Name",
+            "dataType": "string",
+            "sourceColumn": "Project_Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Developer_Name",
+            "dataType": "string",
+            "sourceColumn": "Developer_Name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Micro_Market",
+            "dataType": "string",
+            "sourceColumn": "Micro_Market",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Latitude",
+            "dataType": "double",
+            "sourceColumn": "Latitude",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0.000000",
+            "dataCategory": "Latitude"
+          },
+          {
+            "name": "Longitude",
+            "dataType": "double",
+            "sourceColumn": "Longitude",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0.000000",
+            "dataCategory": "Longitude"
+          },
+          {
+            "name": "Map_Location",
+            "dataType": "string",
+            "sourceColumn": "Map_Location",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataCategory": "Place"
+          },
+          {
+            "name": "Configuration",
+            "dataType": "string",
+            "sourceColumn": "Configuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Unit_Size_Sqft",
+            "dataType": "double",
+            "sourceColumn": "Unit_Size_Sqft",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Size_Category",
+            "dataType": "string",
+            "sourceColumn": "Size_Category",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Ticket_Price_Cr",
+            "dataType": "double",
+            "sourceColumn": "Ticket_Price_Cr",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "#,0.00"
+          },
+          {
+            "name": "Price_per_Sqft",
+            "dataType": "double",
+            "sourceColumn": "Price_per_Sqft",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Price_Segment",
+            "dataType": "string",
+            "sourceColumn": "Price_Segment",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Is_Price_Outlier",
+            "dataType": "int64",
+            "sourceColumn": "Is_Price_Outlier",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
+          },
+          {
+            "name": "Transaction_Type",
+            "dataType": "string",
+            "sourceColumn": "Transaction_Type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Booking_Flag",
+            "dataType": "int64",
+            "sourceColumn": "Booking_Flag",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
+          },
+          {
+            "name": "Booking_Status",
+            "dataType": "string",
+            "sourceColumn": "Booking_Status",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Possession_Status",
+            "dataType": "string",
+            "sourceColumn": "Possession_Status",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Sales_Channel",
+            "dataType": "string",
+            "sourceColumn": "Sales_Channel",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Buyer_Type",
+            "dataType": "string",
+            "sourceColumn": "Buyer_Type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NRI_Buyer",
+            "dataType": "string",
+            "sourceColumn": "NRI_Buyer",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Buyer_Comments",
+            "dataType": "string",
+            "sourceColumn": "Buyer_Comments",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Comment_Sentiment",
+            "dataType": "string",
+            "sourceColumn": "Comment_Sentiment",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Amenity_Score",
+            "dataType": "double",
+            "sourceColumn": "Amenity_Score",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "#,0.00"
+          },
+          {
+            "name": "Amenity_Band",
+            "dataType": "string",
+            "sourceColumn": "Amenity_Band",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Connectivity_Score",
+            "dataType": "double",
+            "sourceColumn": "Connectivity_Score",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "#,0.00"
+          },
+          {
+            "name": "Locality_Infra_Score",
+            "dataType": "double",
+            "sourceColumn": "Locality_Infra_Score",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "#,0.00"
+          },
+          {
+            "name": "Avg_Traffic_Time_Min",
+            "dataType": "int64",
+            "sourceColumn": "Avg_Traffic_Time_Min",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Purchase_Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Purchase_Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "Short Date"
+          },
+          {
+            "name": "Purchase_Year",
+            "dataType": "int64",
+            "sourceColumn": "Purchase_Year",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
+          },
+          {
+            "name": "Quarter_Number",
+            "dataType": "int64",
+            "sourceColumn": "Quarter_Number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
+          },
+          {
+            "name": "Quarter_Label",
+            "dataType": "string",
+            "sourceColumn": "Quarter_Label",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal_Year",
+            "dataType": "string",
+            "sourceColumn": "Fiscal_Year",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Price_Imputed",
+            "dataType": "int64",
+            "sourceColumn": "Price_Imputed",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0",
+            "isHidden": true
+          },
+          {
+            "name": "Size_Imputed",
+            "dataType": "int64",
+            "sourceColumn": "Size_Imputed",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0",
+            "isHidden": true
+          },
+          {
+            "name": "Amenity_Imputed",
+            "dataType": "int64",
+            "sourceColumn": "Amenity_Imputed",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "luxury_housing",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(CleanedDataPath), [Delimiter=\",\", Columns=36, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Promoted, {{\"Property_ID\", type text}, {\"Project_Name\", type text}, {\"Developer_Name\", type text}, {\"Micro_Market\", type text}, {\"Latitude\", type number}, {\"Longitude\", type number}, {\"Map_Location\", type text}, {\"Configuration\", type text}, {\"Unit_Size_Sqft\", type number}, {\"Size_Category\", type text}, {\"Ticket_Price_Cr\", type number}, {\"Price_per_Sqft\", type number}, {\"Price_Segment\", type text}, {\"Is_Price_Outlier\", Int64.Type}, {\"Transaction_Type\", type text}, {\"Booking_Flag\", Int64.Type}, {\"Booking_Status\", type text}, {\"Possession_Status\", type text}, {\"Sales_Channel\", type text}, {\"Buyer_Type\", type text}, {\"NRI_Buyer\", type text}, {\"Buyer_Comments\", type text}, {\"Comment_Sentiment\", type text}, {\"Amenity_Score\", type number}, {\"Amenity_Band\", type text}, {\"Connectivity_Score\", type number}, {\"Locality_Infra_Score\", type number}, {\"Avg_Traffic_Time_Min\", Int64.Type}, {\"Purchase_Date\", type date}, {\"Purchase_Year\", Int64.Type}, {\"Quarter_Number\", Int64.Type}, {\"Quarter_Label\", type text}, {\"Fiscal_Year\", type text}, {\"Price_Imputed\", Int64.Type}, {\"Size_Imputed\", Int64.Type}, {\"Amenity_Imputed\", Int64.Type}})",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "DimDate",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "Short Date",
+            "isKey": true
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "[Year]",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Quarter Number",
+            "dataType": "int64",
+            "sourceColumn": "[Quarter Number]",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Quarter Label",
+            "dataType": "string",
+            "sourceColumn": "[Quarter Label]",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "sortByColumn": "Quarter Sort"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Quarter Sort",
+            "dataType": "int64",
+            "sourceColumn": "[Quarter Sort]",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0",
+            "isHidden": true
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Fiscal Year",
+            "dataType": "string",
+            "sourceColumn": "[Fiscal Year]",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Month Name",
+            "dataType": "string",
+            "sourceColumn": "[Month Name]",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "sortByColumn": "Month Number"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Month Number",
+            "dataType": "int64",
+            "sourceColumn": "[Month Number]",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "formatString": "0",
+            "isHidden": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "mode": "import",
+            "source": {
+              "type": "calculated",
+              "expression": "VAR MinDate = MIN ( luxury_housing[Purchase_Date] ) VAR MaxDate = MAX ( luxury_housing[Purchase_Date] ) RETURN ADDCOLUMNS ( CALENDAR ( MinDate, MaxDate ), \"Year\", YEAR ( [Date] ), \"Quarter Number\", QUARTER ( [Date] ), \"Quarter Label\", FORMAT ( [Date], \"YYYY\" ) & \"-Q\" & QUARTER ( [Date] ), \"Quarter Sort\", YEAR ( [Date] ) * 10 + QUARTER ( [Date] ), \"Fiscal Year\", \"FY\" & YEAR ( EDATE ( [Date], -3 ) ) & \"-\" & RIGHT ( YEAR ( EDATE ( [Date], -3 ) ) + 1, 2 ), \"Month Name\", FORMAT ( [Date], \"MMM YYYY\" ), \"Month Number\", MONTH ( [Date] ) )"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Measures",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Placeholder",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "[Placeholder]",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Properties",
+            "expression": "COUNTROWS ( luxury_housing )",
+            "description": "Row count of the fact table under the current filter context.",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Total Bookings",
+            "expression": "SUM ( luxury_housing[Booking_Flag] )",
+            "description": "Count of Primary transactions, treated as bookings.",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Drop Offs",
+            "expression": "[Total Properties] - [Total Bookings]",
+            "description": "Transactions that did not convert to a booking.",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Booking Conversion %",
+            "expression": "DIVIDE ( [Total Bookings], [Total Properties], 0 )",
+            "description": "Share of transactions that are bookings.",
+            "formatString": "0.00%"
+          },
+          {
+            "name": "Drop Off Rate %",
+            "expression": "1 - [Booking Conversion %]",
+            "description": "Complement of booking conversion.",
+            "formatString": "0.00%"
+          },
+          {
+            "name": "Avg Ticket Price Cr",
+            "expression": "AVERAGE ( luxury_housing[Ticket_Price_Cr] )",
+            "description": "Mean ticket price in crore rupees.",
+            "formatString": "#,0.00 \"Cr\""
+          },
+          {
+            "name": "Median Ticket Price Cr",
+            "expression": "MEDIAN ( luxury_housing[Ticket_Price_Cr] )",
+            "description": "Median ticket price in crore rupees.",
+            "formatString": "#,0.00 \"Cr\""
+          },
+          {
+            "name": "Avg Price per Sqft",
+            "expression": "AVERAGE ( luxury_housing[Price_per_Sqft] )",
+            "description": "Mean price per square foot in rupees.",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Total Pipeline Value Cr",
+            "expression": "SUM ( luxury_housing[Ticket_Price_Cr] )",
+            "description": "Sum of ticket prices in crore rupees.",
+            "formatString": "#,0 \"Cr\""
+          },
+          {
+            "name": "Avg Unit Size Sqft",
+            "expression": "AVERAGE ( luxury_housing[Unit_Size_Sqft] )",
+            "description": "Mean unit size in square feet.",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Avg Amenity Score",
+            "expression": "AVERAGE ( luxury_housing[Amenity_Score] )",
+            "description": "Mean amenity score out of 10.",
+            "formatString": "#,0.00"
+          },
+          {
+            "name": "Positive Sentiment %",
+            "expression": "DIVIDE ( CALCULATE ( [Total Properties], luxury_housing[Comment_Sentiment] = \"Positive\" ), CALCULATE ( [Total Properties], luxury_housing[Comment_Sentiment] <> \"No Comment\" ), 0 )",
+            "description": "Positive share of buyers who left a comment.",
+            "formatString": "0.00%"
+          },
+          {
+            "name": "Negative Sentiment %",
+            "expression": "DIVIDE ( CALCULATE ( [Total Properties], luxury_housing[Comment_Sentiment] = \"Negative\" ), CALCULATE ( [Total Properties], luxury_housing[Comment_Sentiment] <> \"No Comment\" ), 0 )",
+            "description": "Negative share of buyers who left a comment.",
+            "formatString": "0.00%"
+          },
+          {
+            "name": "Market Avg Price per Sqft",
+            "expression": "CALCULATE ( AVERAGE ( luxury_housing[Price_per_Sqft] ), ALLEXCEPT ( luxury_housing, luxury_housing[Micro_Market] ) )",
+            "description": "Price per sqft for the whole micro-market, ignoring builder filters.",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Price Premium vs Market %",
+            "expression": "DIVIDE ( [Avg Price per Sqft] - [Market Avg Price per Sqft], [Market Avg Price per Sqft], 0 )",
+            "description": "How far above or below the local market a builder prices.",
+            "formatString": "+0.00%;-0.00%;0.00%"
+          },
+          {
+            "name": "Builder Rank by Price",
+            "expression": "RANKX ( ALLSELECTED ( luxury_housing[Developer_Name] ), [Avg Ticket Price Cr],, DESC )",
+            "description": "Rank of the builder by average ticket price.",
+            "formatString": "0"
+          },
+          {
+            "name": "Booking Status Share %",
+            "expression": "DIVIDE ( [Total Properties], CALCULATE ( [Total Properties], ALL ( luxury_housing[Booking_Status] ) ) )",
+            "description": "Share of a segment's rows in each booking status. Drives the 100% stacked columns for questions 4 and 6.",
+            "formatString": "0.00%"
+          },
+          {
+            "name": "Builder Revenue Rank",
+            "expression": "RANKX ( ALLSELECTED ( luxury_housing[Developer_Name] ), [Total Pipeline Value Cr],, DESC )",
+            "description": "Rank of the builder by total revenue. Question 10.",
+            "formatString": "0"
+          },
+          {
+            "name": "Is Top 5 Builder",
+            "expression": "IF ( [Builder Revenue Rank] <= 5, 1, 0 )",
+            "description": "Flag for the top five builders by revenue. Use as a visual filter.",
+            "formatString": "0"
+          },
+          {
+            "name": "Top 5 Builders Revenue Cr",
+            "expression": "SUMX ( TOPN ( 5, ALLSELECTED ( luxury_housing[Developer_Name] ), [Total Pipeline Value Cr], DESC ), [Total Pipeline Value Cr] )",
+            "description": "Combined revenue of the top five builders. Question 10 KPI card.",
+            "formatString": "#,0 \"Cr\""
+          },
+          {
+            "name": "Top 5 Builders Bookings",
+            "expression": "SUMX ( TOPN ( 5, ALLSELECTED ( luxury_housing[Developer_Name] ), [Total Pipeline Value Cr], DESC ), [Total Bookings] )",
+            "description": "Combined bookings of the top five builders by revenue. Question 10 KPI card.",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Previous Quarter Bookings",
+            "expression": "CALCULATE ( [Total Bookings], PREVIOUSQUARTER ( DimDate[Date] ) )",
+            "description": "Bookings in the preceding quarter.",
+            "formatString": "#,0"
+          },
+          {
+            "name": "QoQ Booking Growth %",
+            "expression": "VAR Previous = [Previous Quarter Bookings] RETURN DIVIDE ( [Total Bookings] - Previous, Previous )",
+            "description": "Quarter-over-quarter change in bookings.",
+            "formatString": "+0.00%;-0.00%;0.00%"
+          },
+          {
+            "name": "Previous Quarter Avg Price",
+            "expression": "CALCULATE ( [Avg Ticket Price Cr], PREVIOUSQUARTER ( DimDate[Date] ) )",
+            "description": "Average ticket price in the preceding quarter.",
+            "formatString": "#,0.00 \"Cr\""
+          },
+          {
+            "name": "QoQ Price Change %",
+            "expression": "VAR Previous = [Previous Quarter Avg Price] RETURN DIVIDE ( [Avg Ticket Price Cr] - Previous, Previous )",
+            "description": "Quarter-over-quarter change in average price.",
+            "formatString": "+0.00%;-0.00%;0.00%"
+          },
+          {
+            "name": "Rolling 4Q Avg Price",
+            "expression": "AVERAGEX ( DATESINPERIOD ( DimDate[Date], MAX ( DimDate[Date] ), -12, MONTH ), [Avg Ticket Price Cr] )",
+            "description": "Trailing four-quarter average ticket price.",
+            "formatString": "#,0.00 \"Cr\""
+          },
+          {
+            "name": "Conversion CI Half Width",
+            "expression": "VAR N = [Total Properties] VAR P = [Booking Conversion %] RETURN IF ( N > 0, 1.96 * SQRT ( DIVIDE ( P * ( 1 - P ), N ) ) )",
+            "description": "Half width of the 95% confidence interval on conversion.",
+            "formatString": "0.00%"
+          },
+          {
+            "name": "Conversion Lower Bound",
+            "expression": "[Booking Conversion %] - [Conversion CI Half Width]",
+            "description": "Lower bound of the 95% confidence interval on conversion.",
+            "formatString": "0.00%"
+          },
+          {
+            "name": "Conversion Upper Bound",
+            "expression": "[Booking Conversion %] + [Conversion CI Half Width]",
+            "description": "Upper bound of the 95% confidence interval on conversion.",
+            "formatString": "0.00%"
+          },
+          {
+            "name": "Conversion Signal",
+            "expression": "IF ( [Conversion Lower Bound] > 0.5 || [Conversion Upper Bound] < 0.5, \"Distinguishable from baseline\", \"Within noise\" )",
+            "description": "Whether conversion differs measurably from the 50% baseline. Reads 'Within noise' everywhere on this dataset - that is the finding."
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Measures",
+            "mode": "import",
+            "source": {
+              "type": "calculated",
+              "expression": "ROW(\"Placeholder\", 1)"
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "181236d8-137e-4490-b973-f19f085f9e46",
+        "fromTable": "luxury_housing",
+        "fromColumn": "Purchase_Date",
+        "toTable": "DimDate",
+        "toColumn": "Date"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"CleanedDataPath\", \"luxury_housing\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      }
+    ]
+  }
+}

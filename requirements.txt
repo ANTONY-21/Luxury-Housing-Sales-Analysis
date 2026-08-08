@@ -1,0 +1,17 @@
+# Core pipeline — required
+pandas>=2.2
+numpy>=1.26
+scipy>=1.11
+
+# Charts and dashboard — required for eda_analysis.py and dashboard.py
+matplotlib>=3.8
+seaborn>=0.13
+streamlit>=1.30
+altair>=5.0
+
+# SQL warehouse
+#   SQLite (the default backend) needs nothing — sqlite3 ships with Python.
+#   Uncomment the pair you need to target a real server instead:
+# sqlalchemy>=2.0
+# psycopg2-binary>=2.9    # PostgreSQL
+# pymysql>=1.1            # MySQL

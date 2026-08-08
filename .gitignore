@@ -1,0 +1,57 @@
+# --------------------------------------------------------------------------
+# Generated pipeline artifacts
+#
+# Everything here is rebuilt by running the three pipeline scripts, so it is
+# deliberately not committed. The raw dataset IS committed, which keeps the
+# repository reproducible from a clean clone.
+# --------------------------------------------------------------------------
+# 26 MB, rebuilt by data_cleaning.py
+data/processed/*.csv
+# 50 MB, rebuilt by sql_loader.py
+data/*.db
+data/*.db-wal
+data/*.db-shm
+
+# Stale synthetic output from the original scaffold - random noise, not real
+# data. Kept on disk for reference but never committed.
+python_scripts/data/
+
+# --------------------------------------------------------------------------
+# Python
+# --------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.env/
+.venv/
+venv/
+env/
+
+# --------------------------------------------------------------------------
+# Power BI
+# --------------------------------------------------------------------------
+# Local cache and per-user settings Power BI writes into a project folder.
+**/.pbi/
+*.pbix.tmp
+TempSaves/
+
+# --------------------------------------------------------------------------
+# Secrets
+# --------------------------------------------------------------------------
+# Database credentials come from environment variables (see config.py).
+.env.local
+*.env
+secrets.json
+
+# --------------------------------------------------------------------------
+# OS / editor
+# --------------------------------------------------------------------------
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/

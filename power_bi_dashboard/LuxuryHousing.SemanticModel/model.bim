@@ -844,7 +844,7 @@
     ],
     "relationships": [
       {
-        "name": "181236d8-137e-4490-b973-f19f085f9e46",
+        "name": "693f2214-5010-4f71-8afb-7d3acd582819",
         "fromTable": "luxury_housing",
         "fromColumn": "Purchase_Date",
         "toTable": "DimDate",

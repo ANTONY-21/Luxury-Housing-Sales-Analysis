@@ -12,11 +12,12 @@ interactive dashboard.
 
 | Stage | Script | Output |
 |---|---|---|
-| Clean 101,000 raw rows | `python_scripts/data_cleaning.py` | `data/processed/luxury_housing_clean.csv` + audit report |
-| Build the warehouse | `python_scripts/sql_loader.py` | `data/luxury_housing.db` (1 table, 10 views, 10 indexes) |
-| Analyse | `python_scripts/eda_analysis.py` | 11 charts + significance-tested findings |
+| Clean 101,000 raw rows | `python_scripts/data_cleaning.py` | `data/processed/luxury_housing_clean.csv` (36 cols) + audit report |
+| Build the warehouse | `python_scripts/sql_loader.py` | `data/luxury_housing.db` (1 table, 14 views, 10 indexes) |
+| Analyse | `python_scripts/eda_analysis.py` | 12 charts + significance-tested findings |
 | Visualise | `python_scripts/dashboard.py` | 5-page Streamlit dashboard |
-| Visualise (Power BI) | `documentation/powerbi_build_guide.md` | DAX library + page-by-page build spec |
+| Power BI model | `python_scripts/generate_pbip.py` | PBIP project: 36 typed columns, `DimDate`, 30 DAX measures |
+| Power BI report | `documentation/powerbi_build_guide.md` | DAX library + page-by-page build spec |
 
 ---
 
@@ -57,32 +58,55 @@ Luxury-Housing-Sales-Analysis/
 ├── README.md
 │
 ├── python_scripts/
-│   ├── config.py                         paths, DB backend switch, reference data
+│   ├── config.py                         paths, DB switch, coordinates, reference data
 │   ├── data_cleaning.py                  Stage 1 — clean + feature engineer
 │   ├── sql_loader.py                     Stage 2 — schema, load, validate
 │   ├── eda_analysis.py                   Stage 3a — charts + significance tests
-│   └── dashboard.py                      Stage 3b — Streamlit dashboard
+│   ├── dashboard.py                      Stage 3b — Streamlit dashboard
+│   └── generate_pbip.py                  Stage 3c — Power BI semantic model
 │
 ├── sql_scripts/
 │   ├── create_schema.sql                 fact table + 10 indexes
-│   ├── analytics_views.sql               10 views, one per business use case
+│   ├── analytics_views.sql               14 views, incl. one per brief question
 │   └── validation_queries.sql            12 labelled validation queries
 │
+├── power_bi_dashboard/                   generated PBIP + status notes
+│
 ├── data/
-│   ├── processed/luxury_housing_clean.csv   100,000 x 33
-│   └── luxury_housing.db                    SQLite warehouse
+│   ├── processed/luxury_housing_clean.csv   100,000 x 36  (git-ignored)
+│   └── luxury_housing.db                    SQLite warehouse (git-ignored)
 │
 ├── outputs/
 │   ├── data_quality_report.md            every repair the cleaner made
 │   ├── sql_validation_results.md         all 12 queries with their results
 │   ├── eda_findings.md                   headline numbers + significance table
-│   └── charts/                           11 PNGs
+│   └── charts/                           12 PNGs
 │
 └── documentation/
     ├── project_plan.md                   architecture and design decisions
     ├── powerbi_build_guide.md            connection, model, DAX, page specs
+    ├── powerbi_visualization_questions.md  the 10 brief questions -> visuals
     └── insights_report.md                business findings
 ```
+
+Generated artifacts (the 26 MB cleaned CSV and 50 MB SQLite file) are
+git-ignored and rebuilt by the pipeline; the raw dataset **is** committed, so a
+clean clone reproduces everything.
+
+## Configuration
+
+No paths or credentials are hardcoded. Everything resolves from the repository
+root, derived from `config.py`'s own location, so the scripts run from any
+working directory. Each value can be overridden by an environment variable:
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `LUXURY_HOUSING_ROOT` | repo root | Relocate the whole project |
+| `LUXURY_HOUSING_RAW_CSV` | `Luxury_Housing_Bangalore.csv` | Point at a different extract |
+| `LUXURY_DB_BACKEND` | `sqlite` | `sqlite` / `postgresql` / `mysql` |
+| `LUXURY_DB_HOST`, `LUXURY_DB_PORT` | `localhost`, backend default | Server address |
+| `LUXURY_DB_USER`, `LUXURY_DB_PASSWORD` | `postgres`, empty | Credentials — never committed |
+| `LUXURY_DB_NAME` | `luxury_housing` | Database name |
 
 ---
 
@@ -145,6 +169,20 @@ visible. See [`outputs/eda_findings.md`](outputs/eda_findings.md).
 | Competitive Pricing — pricing across builders and segments | `vw_competitive_pricing`; dashboard page 4 |
 | Amenity Score & Conversion | `vw_amenity_conversion`; dashboard page 4 |
 | Quarterly Trend Tracking | `vw_quarterly_trends`; dashboard page 2 |
+
+### The 10 Power BI visualization questions
+
+Each numbered question in the brief is mapped to an exact visual — chart type,
+field wells, required DAX and page — in
+[`documentation/powerbi_visualization_questions.md`](documentation/powerbi_visualization_questions.md),
+with a supporting SQL view for each so the numbers can be checked outside Power
+BI. The Streamlit dashboard implements the same ten, labelled `Q1 ·`, `Q2 ·`
+and so on.
+
+Maps (Q9) use explicit `latitude` / `longitude` columns rather than name
+geocoding: the raw dataset ships no coordinates, so the pipeline joins
+approximate locality centroids for all 16 micro-markets from
+`config.MICRO_MARKET_COORDS`.
 
 ---
 

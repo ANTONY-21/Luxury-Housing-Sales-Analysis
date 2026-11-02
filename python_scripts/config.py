@@ -8,10 +8,27 @@ The warehouse backend is switchable. SQLite is the default because it needs no
 server install and keeps the whole project self-contained; switch DB_BACKEND to
 'postgresql' or 'mysql' (and fill in DB_CONFIG) to point the same loader at a
 real server. Power BI can connect to any of the three.
+
+Importing this module also switches stdout and stderr to UTF-8, since every
+script in the pipeline imports it and several print non-ASCII characters.
 """
 
 import os
+import sys
 from pathlib import Path
+
+
+# --------------------------------------------------------------------------
+# Console encoding
+#
+# Progress messages carry the rupee sign, which a Windows console or a
+# redirected pipe running the legacy cp1252 code page cannot encode - it raises
+# UnicodeEncodeError mid-run and kills the script. Every other module imports
+# this one, so switching the streams to UTF-8 here covers the whole pipeline.
+# --------------------------------------------------------------------------
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
 
 
 def _env_path(name: str, default: Path) -> Path:
